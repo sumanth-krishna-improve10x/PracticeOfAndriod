@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button toggleBtn;
     private Button checkBoxBtn;
     private Button  radioBtn;
+    private Button  ratingBar;
 
 
     @Override
@@ -24,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         handleCustomBtn();
         handleCheckBoxButton();
         handleRadioBtn();
+        handleRatingBar();
+    }
+
+    private void handleRatingBar() {
+        ratingBar.setOnClickListener(view -> {
+            Intent ratingBarIntent = new Intent(this,RatingBarActivity.class);
+            startActivity(ratingBarIntent);
+        });
     }
 
     private void handleRadioBtn() {
@@ -69,5 +78,7 @@ public class MainActivity extends AppCompatActivity {
         buttonBtn = findViewById(R.id.button_btn);
         checkBoxBtn = findViewById(R.id.check_box_btn);
         radioBtn = findViewById(R.id.radio_btn);
+        ratingBar = findViewById(R.id.rating_bar);
+
     }
 }

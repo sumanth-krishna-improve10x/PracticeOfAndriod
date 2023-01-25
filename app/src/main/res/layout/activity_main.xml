@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#15DCC9"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/custom_toast_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="104dp"
         android:backgroundTint="#15DCC9"
         android:text="Custom Toast Button"
         app:layout_constraintEnd_toEndOf="@+id/button_btn"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_btn"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +27,7 @@
         android:backgroundTint="#15DCC9"
         android:text="Toggle Button"
         app:layout_constraintEnd_toEndOf="@+id/custom_toast_btn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/custom_toast_btn"
         app:layout_constraintTop_toBottomOf="@+id/custom_toast_btn" />
 
@@ -45,11 +47,11 @@
         android:id="@+id/check_box_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#15DCC9"
         android:text="check box button"
         app:layout_constraintEnd_toEndOf="@+id/toggle_btn"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toggle_btn"
         app:layout_constraintTop_toBottomOf="@+id/toggle_btn" />
 
@@ -57,12 +59,23 @@
         android:id="@+id/radio_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#15DCC9"
         android:text="Radio button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/check_box_btn"
         app:layout_constraintTop_toBottomOf="@+id/check_box_btn" />
+
+    <Button
+        android:id="@+id/rating_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#15DCC9"
+        android:text="Rating Bar"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/radio_btn"
+        app:layout_constraintStart_toStartOf="@+id/radio_btn"
+        app:layout_constraintTop_toBottomOf="@+id/radio_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
