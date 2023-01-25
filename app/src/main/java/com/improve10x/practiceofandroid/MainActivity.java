@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button checkBoxBtn;
     private Button  radioBtn;
     private Button  ratingBar;
+    private Button seekBarBtn;
 
 
     @Override
@@ -26,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         handleCheckBoxButton();
         handleRadioBtn();
         handleRatingBar();
+        handleSeekBar();
+    }
+
+    private void handleSeekBar() {
+       seekBarBtn.setOnClickListener(view -> {
+           Intent seekBarIntent = new Intent(this, SeekBarActivity.class);
+           startActivity(seekBarIntent);
+       });
+
     }
 
     private void handleRatingBar() {
@@ -79,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         checkBoxBtn = findViewById(R.id.check_box_btn);
         radioBtn = findViewById(R.id.radio_btn);
         ratingBar = findViewById(R.id.rating_bar);
+        seekBarBtn = findViewById(R.id.seek_bar_btn);
 
     }
 }

@@ -78,4 +78,17 @@
         app:layout_constraintStart_toStartOf="@+id/radio_btn"
         app:layout_constraintTop_toBottomOf="@+id/radio_btn" />
 
+    <Button
+        android:id="@+id/seek_bar_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#15DCC9"
+        android:text="Seek Bar"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/rating_bar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rating_bar"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
