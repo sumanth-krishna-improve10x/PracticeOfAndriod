@@ -42,20 +42,5 @@
         app:layout_constraintTop_toBottomOf="@+id/second_number_txt"
         app:layout_constraintVertical_bias="0.053" />
 
-    <Button
-        android:id="@+id/custom_toast_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CustomToastButton"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="341dp" />
 
-    <Button
-        android:id="@+id/toggle_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toggle Button"
-        app:layout_constraintEnd_toEndOf="@+id/custom_toast_btn"
-        app:layout_constraintStart_toStartOf="@+id/custom_toast_btn"
-        app:layout_constraintTop_toBottomOf="@+id/custom_toast_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

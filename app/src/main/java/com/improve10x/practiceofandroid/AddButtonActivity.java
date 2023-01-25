@@ -13,10 +13,6 @@ public class AddButtonActivity extends AppCompatActivity {
     private EditText firstNumberTxt;
     private EditText secondNumberTxt;
     private Button sumBtn;
-    private Button customToastBtn;
-    private Button toggleBtn;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,32 +21,14 @@ public class AddButtonActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Sum of two numbers");
         setupViews();
         handleBtn();
-        handleCustomBtn();
-        handleToggleBtn();
 
     }
-
-    private void handleToggleBtn() {
-        toggleBtn.setOnClickListener(view -> {
-            Intent toggleBtnIntent = new Intent(this,ToggleButtonActivity.class);
-            startActivity(toggleBtnIntent);
-        });
-    }
-
-    private void handleCustomBtn() {
-        customToastBtn.setOnClickListener(view -> {
-            Intent customToastIntent = new Intent(this,CustomToastActivity.class);
-            startActivity(customToastIntent);
-        });
-    }
-
 
     private void setupViews() {
         firstNumberTxt = findViewById(R.id.first_number_txt);
         secondNumberTxt = findViewById(R.id.second_number_txt);
         sumBtn = findViewById(R.id.sum_btn);
-        customToastBtn = findViewById(R.id.custom_toast_btn);
-        toggleBtn = findViewById(R.id.toggle_btn);
+
     }
 
     private void handleBtn() {
