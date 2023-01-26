@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private Button  radioBtn;
     private Button  ratingBar;
     private Button seekBarBtn;
+    private Button datePickerBtn;
+    private Button timePickerBtn;
 
 
     @Override
@@ -28,6 +30,22 @@ public class MainActivity extends AppCompatActivity {
         handleRadioBtn();
         handleRatingBar();
         handleSeekBar();
+        handleDatePicker();
+        handleTimePicker();
+    }
+
+    private void handleTimePicker() {
+        timePickerBtn.setOnClickListener(view -> {
+            Intent timePickerIntent = new Intent(this,TimePickerActivity.class);
+            startActivity(timePickerIntent);
+        });
+    }
+
+    private void handleDatePicker() {
+        datePickerBtn.setOnClickListener(view -> {
+            Intent datePickerIntent = new Intent(this,DatePickerActivity.class);
+            startActivity(datePickerIntent);
+        });
     }
 
     private void handleSeekBar() {
@@ -35,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
            Intent seekBarIntent = new Intent(this, SeekBarActivity.class);
            startActivity(seekBarIntent);
        });
-
     }
 
     private void handleRatingBar() {
@@ -90,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         radioBtn = findViewById(R.id.radio_btn);
         ratingBar = findViewById(R.id.rating_bar);
         seekBarBtn = findViewById(R.id.seek_bar_btn);
-
+        datePickerBtn = findViewById(R.id.date_picker_btn);
+        timePickerBtn = findViewById(R.id.time_picker_btn);
     }
 }

@@ -91,4 +91,28 @@
         app:layout_constraintStart_toStartOf="@+id/rating_bar"
         app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
 
+    <Button
+        android:id="@+id/date_picker_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#15DCC9"
+        android:text="DatePicker"
+        app:layout_constraintEnd_toEndOf="@+id/seek_bar_btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/seek_bar_btn"
+        app:layout_constraintTop_toBottomOf="@+id/seek_bar_btn" />
+
+    <Button
+        android:id="@+id/time_picker_btn"
+        android:layout_width="397dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#15DCC9"
+        android:text="TimePicker"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/date_picker_btn"
+        app:layout_constraintStart_toStartOf="@+id/date_picker_btn"
+        app:layout_constraintTop_toBottomOf="@+id/date_picker_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

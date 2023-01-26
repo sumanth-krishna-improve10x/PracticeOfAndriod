@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimePickerActivity">
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/current_time_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="428dp"
+        android:text="Current Time"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/time_picker"
+        app:layout_constraintStart_toStartOf="@+id/time_picker"
+        app:layout_constraintTop_toTopOf="@+id/time_picker" />
+
+    <Button
+        android:id="@+id/change_time_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="change time"
+        app:layout_constraintEnd_toEndOf="@+id/current_time_txt"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/current_time_txt"
+        app:layout_constraintTop_toBottomOf="@+id/current_time_txt" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
