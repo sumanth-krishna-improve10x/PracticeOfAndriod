@@ -10,21 +10,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.improve10x.practiceofandroid.databinding.ActivityCustomToastBinding;
+
 public class CustomToastActivity extends AppCompatActivity {
-    private Button customToastBtn;
+    private ActivityCustomToastBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_toast);
+        binding = ActivityCustomToastBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("CustomToast");
-        setUpViews();
         handleBtn();
 
     }
 
     private void handleBtn() {
-        customToastBtn.setOnClickListener(new View.OnClickListener() {
+        binding.customToastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showToast();
@@ -32,10 +34,10 @@ public class CustomToastActivity extends AppCompatActivity {
 
             private void showToast() {
                 LayoutInflater inflater = getLayoutInflater();
-                View layout = inflater.inflate(R.layout.toast_layout,(ViewGroup) findViewById(R.id.toast_root));
+                View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast_root));
 
                 Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.CENTER,0 ,0);
+                toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.setDuration(Toast.LENGTH_LONG);
                 toast.setView(layout);
 
@@ -43,8 +45,5 @@ public class CustomToastActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void setUpViews() {
-        customToastBtn = findViewById(R.id.custom_toast_btn);
-    }
 }
+

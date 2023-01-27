@@ -4,25 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+
+import com.improve10x.practiceofandroid.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonBtn;
-    private Button customToastBtn;
-    private Button toggleBtn;
-    private Button checkBoxBtn;
-    private Button  radioBtn;
-    private Button  ratingBar;
-    private Button seekBarBtn;
-    private Button datePickerBtn;
-    private Button timePickerBtn;
-
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setUpViews();
+        setContentView(binding.getRoot());
         handleButton();
         handleToggleBtn();
         handleCustomBtn();
@@ -32,82 +24,93 @@ public class MainActivity extends AppCompatActivity {
         handleSeekBar();
         handleDatePicker();
         handleTimePicker();
+        handleVerticalScroll();
+        handleHorizontalScroll();
+        handleListView();
+    }
+
+    private void handleListView() {
+        binding.listViewBtn.setOnClickListener(view -> {
+            Intent listViewIntent = new Intent(this,ListViewActivity.class);
+            startActivity(listViewIntent);
+        });
+    }
+
+    private void handleHorizontalScroll() {
+        binding.horizontalScroll.setOnClickListener(view -> {
+            Intent horizontalIntent = new Intent(this,HorizontalScrollViewActivity.class);
+            startActivity(horizontalIntent);
+        });
+    }
+
+    private void handleVerticalScroll() {
+        binding.verticalScrollBtn.setOnClickListener(view -> {
+            Intent verticalScrollIntent = new Intent(this, VerticalScrollViewActivity.class);
+            startActivity(verticalScrollIntent);
+        });
     }
 
     private void handleTimePicker() {
-        timePickerBtn.setOnClickListener(view -> {
+        binding.timePickerBtn.setOnClickListener(view -> {
             Intent timePickerIntent = new Intent(this,TimePickerActivity.class);
             startActivity(timePickerIntent);
         });
     }
 
     private void handleDatePicker() {
-        datePickerBtn.setOnClickListener(view -> {
+        binding.datePickerBtn.setOnClickListener(view -> {
             Intent datePickerIntent = new Intent(this,DatePickerActivity.class);
             startActivity(datePickerIntent);
         });
     }
 
     private void handleSeekBar() {
-       seekBarBtn.setOnClickListener(view -> {
+       binding.seekBarBtn.setOnClickListener(view -> {
            Intent seekBarIntent = new Intent(this, SeekBarActivity.class);
            startActivity(seekBarIntent);
        });
     }
 
     private void handleRatingBar() {
-        ratingBar.setOnClickListener(view -> {
+        binding.ratingBar.setOnClickListener(view -> {
             Intent ratingBarIntent = new Intent(this,RatingBarActivity.class);
             startActivity(ratingBarIntent);
         });
     }
 
     private void handleRadioBtn() {
-        radioBtn.setOnClickListener(view -> {
+       binding. radioBtn.setOnClickListener(view -> {
             Intent radioBtnIntent = new Intent(this,RadioButtonActivity.class);
             startActivity(radioBtnIntent);
         });
     }
 
     private void handleCheckBoxButton() {
-        checkBoxBtn.setOnClickListener(view -> {
+        binding.checkBoxBtn.setOnClickListener(view -> {
             Intent checkBoxIntent = new Intent(this,CheckBoxActivity.class);
             startActivity(checkBoxIntent);
         });
     }
 
     private void handleButton() {
-        buttonBtn.setOnClickListener(view -> {
+        binding.buttonBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this,AddButtonActivity.class);
             startActivity(intent);
         });
-
     }
 
-
     private void handleCustomBtn() {
-        customToastBtn.setOnClickListener(view -> {
+       binding. customToastBtn.setOnClickListener(view -> {
         Intent customToastIntent = new Intent(this,CustomToastActivity.class);
         startActivity(customToastIntent);
     });
     }
 
     private void handleToggleBtn() {
-        toggleBtn.setOnClickListener(view -> {
+        binding.toggleBtn.setOnClickListener(view -> {
             Intent toggleBtnIntent = new Intent(this,ToggleButtonActivity.class);
             startActivity(toggleBtnIntent);
         });
     }
 
-    private void setUpViews() {
-        customToastBtn = findViewById(R.id.custom_toast_btn);
-        toggleBtn = findViewById(R.id.toggle_btn);
-        buttonBtn = findViewById(R.id.button_btn);
-        checkBoxBtn = findViewById(R.id.check_box_btn);
-        radioBtn = findViewById(R.id.radio_btn);
-        ratingBar = findViewById(R.id.rating_bar);
-        seekBarBtn = findViewById(R.id.seek_bar_btn);
-        datePickerBtn = findViewById(R.id.date_picker_btn);
-        timePickerBtn = findViewById(R.id.time_picker_btn);
-    }
 }

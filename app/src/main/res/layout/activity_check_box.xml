@@ -4,52 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckBoxActivity">
+    tools:context=".CheckBoxButtonActivity">
 
     <CheckBox
-        android:id="@+id/pizza_item"
+        android:id="@+id/pizza_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
         android:text="Pizza"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/coffee_cb"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <CheckBox
-        android:id="@+id/coffee_item"
+        android:id="@+id/coffee_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="72dp"
         android:text="Coffee"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/pizza_item"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/pizza_item"
-        app:layout_constraintTop_toBottomOf="@+id/pizza_item" />
+        app:layout_constraintBottom_toTopOf="@+id/burger_cb"
+        app:layout_constraintEnd_toEndOf="@+id/pizza_cb"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/pizza_cb"
+        app:layout_constraintTop_toBottomOf="@+id/pizza_cb" />
 
     <CheckBox
-        android:id="@+id/burger_item"
+        android:id="@+id/burger_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="burger"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/coffee_item"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/coffee_item"
-        app:layout_constraintTop_toBottomOf="@+id/coffee_item" />
+        android:layout_marginTop="72dp"
+        android:text="Burger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/coffee_cb"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/coffee_cb"
+        app:layout_constraintTop_toBottomOf="@+id/coffee_cb" />
 
     <Button
         android:id="@+id/order_btn"
-        android:layout_width="88dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="112dp"
-        android:text="Order"
-        app:layout_constraintEnd_toEndOf="@+id/burger_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="order"
+        app:layout_constraintEnd_toEndOf="@+id/burger_cb"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/burger_item"
-        app:layout_constraintTop_toBottomOf="@+id/burger_item" />
+        app:layout_constraintStart_toStartOf="@+id/burger_cb"
+        app:layout_constraintTop_toBottomOf="@+id/burger_cb" />
 </androidx.constraintlayout.widget.ConstraintLayout>

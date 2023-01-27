@@ -9,40 +9,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.improve10x.practiceofandroid.databinding.ActivityAddButtonBinding;
+
 public class AddButtonActivity extends AppCompatActivity {
-    private EditText firstNumberTxt;
-    private EditText secondNumberTxt;
-    private Button sumBtn;
+    ActivityAddButtonBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_button);
+        binding = ActivityAddButtonBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Sum of two numbers");
-        setupViews();
         handleBtn();
-
     }
-
-    private void setupViews() {
-        firstNumberTxt = findViewById(R.id.first_number_txt);
-        secondNumberTxt = findViewById(R.id.second_number_txt);
-        sumBtn = findViewById(R.id.sum_btn);
-
-    }
-
-    private void handleBtn() {
-        sumBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               String firstNumber = firstNumberTxt.getText().toString();
-               String secondNumber = secondNumberTxt.getText().toString();
-                int a = Integer.parseInt(firstNumber);
-                int b = Integer.parseInt(secondNumber);
-                int sum = a + b;
-                Toast.makeText(AddButtonActivity.this, String.valueOf(sum), Toast.LENGTH_SHORT).show();
-                //Toast.makeText(AddButton.this, "Hello Improve10X", Toast.LENGTH_SHORT).show();
-            }
+    // User Interface
+    private void handleBtn(){
+        binding.sumBtn.setOnClickListener(view -> {
+             String number1 = binding.firstNumberTxt.getText().toString();
+             String number2 = binding.secondNumberTxt.getText().toString();
+             String sum = add(number1,number2);
+            Toast.makeText(this, sum, Toast.LENGTH_SHORT).show();
         });
+    }
+
+    // Business Logic
+    private String add(String number1, String number2){
+        int num1 = Integer.parseInt(number1);
+        int num2 = Integer.parseInt(number2);
+        int sum = num1 + num2;
+        return String.valueOf(sum);
     }
 }

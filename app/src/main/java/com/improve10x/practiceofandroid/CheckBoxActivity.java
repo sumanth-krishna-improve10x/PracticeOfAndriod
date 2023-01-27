@@ -8,52 +8,49 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.improve10x.practiceofandroid.databinding.ActivityCheckBoxBinding;
+
 public class CheckBoxActivity extends AppCompatActivity {
-    private CheckBox pizzaItem;
-    private CheckBox coffeeItem;
-    private CheckBox burgerItem;
-    private Button   orderBtn;
+    private ActivityCheckBoxBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_box);
+        binding = ActivityCheckBoxBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Check Box");
-        setUpViews();
         handleBtn();
     }
 
+    // Use Interface
     private void handleBtn() {
-        orderBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int totalamount = 0;
-                StringBuilder result = new StringBuilder();
-                result.append("Selected items: ");
-
-                if(pizzaItem.isChecked()){
-                    result.append("\t Pizza 300Rs");
-                    totalamount += 300;
-                }
-                if(coffeeItem.isChecked()){
-                    result.append("\tCoffee 100rs");
-                    totalamount += 100;
-                }
-                if(burgerItem.isChecked()){
-                    result.append("\tBurger 150");
-                    totalamount += 150;
-
-                    result.append("\tTotal:" + totalamount + "rs");
-                    Toast.makeText(CheckBoxActivity.this, result.toString(), Toast.LENGTH_SHORT).show();
-                }
-            }
+        binding.orderBtn.setOnClickListener(view -> {
+            boolean isPizzaSelected = binding.pizzaCb.isChecked();
+            boolean isCoffeeSelected = binding.coffeeCb.isChecked();
+            boolean isBurgerSelected = binding.burgerCb.isChecked();
+            String orderDetails = createOrderDetails(isPizzaSelected, isCoffeeSelected, isBurgerSelected);
+            Toast.makeText(this, orderDetails, Toast.LENGTH_SHORT).show();
         });
     }
 
-    private void setUpViews() {
-        pizzaItem = findViewById(R.id.pizza_item);
-        coffeeItem = findViewById(R.id.coffee_item);
-        burgerItem = findViewById(R.id.burger_item);
-        orderBtn   =  findViewById(R.id.order_btn);
+    // Business Logic
+    private String createOrderDetails(boolean isPizzaSelected, boolean isCoffeeSelected, boolean isBurgerSelected) {
+        int totalAmount = 0;
+        String orderDetails = "Selected Items";
+        if (isPizzaSelected) {
+            totalAmount += 100;
+            orderDetails += "\tPizza: Rs100";
+        }
+            if (isCoffeeSelected) {
+                totalAmount += 50;
+                orderDetails += "\tCoffee: Rs50";
+            }
+                if (isBurgerSelected) {
+                    totalAmount += 120;
+                    orderDetails += "\tBurger: Rs120";
+                }
+        orderDetails += "Total: Rs" + totalAmount;
+        return orderDetails;
     }
 }
