@@ -7,36 +7,38 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.improve10x.practiceofandroid.databinding.ActivityRadioButtonBinding;
+
 public class RadioButtonActivity extends AppCompatActivity {
-    private RadioButton radioButton1;
-    private RadioButton radioButton2;
-    private Button showBtn;
+    private  ActivityRadioButtonBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivityRadioButtonBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_radio_button);
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Radio Button");
-        setUpViews();
-        handleBtn();
+        handleSelectedBtn();
     }
 
-    private void handleBtn() {
-        showBtn.setOnClickListener(view -> {
-            if(radioButton1.isChecked()){
-                Toast.makeText(this, "Male", Toast.LENGTH_LONG).show();
-            }
-
-            if (radioButton2.isChecked()){
-                Toast.makeText(this, "Female", Toast.LENGTH_LONG).show();
-            }
-
+    private void handleSelectedBtn() {
+        binding.showBtn.setOnClickListener(view -> {
+            boolean male = binding.radioButton1.isChecked();
+            boolean female = binding.radioButton2.isChecked();
+            String result = selectedGender(male , female);
+            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
         });
+
     }
 
-    private void setUpViews() {
-        radioButton1 = findViewById(R.id.radio_button1);
-        radioButton2 = findViewById(R.id.radio_button2);
-        showBtn = findViewById(R.id.show_btn);
+    private String selectedGender(boolean male, boolean female) {
+        String result = "Selected Option : ";
+        if(male){
+            result += "Male";
+        }
+        if(female){
+            result += "Female";
+        }
+        return result;
     }
 }
