@@ -8,35 +8,39 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.improve10x.practiceofandroid.databinding.ActivityToggleButtonBinding;
+
 public class ToggleButtonActivity extends AppCompatActivity {
-    private ToggleButton toggleBtn1;
-    private ToggleButton toggleBtn2;
-    private Button       submitBtn;
+
+    private ActivityToggleButtonBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toggle_button);
+        binding = ActivityToggleButtonBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Toggle Button");
-        setUpViews();
         handleBtn();
     }
 
+    // UseInterface
+
     private void handleBtn() {
-        submitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                StringBuilder result = new StringBuilder();
-                result.append("toggleBtn1 :").append(toggleBtn1.getText());
-                result.append("toggleBtn2: ").append(toggleBtn2.getText());
-                Toast.makeText(ToggleButtonActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-            }
+        binding.submitBtn.setOnClickListener(view -> {
+            String toggle1 = binding.toggleBtn1.getText().toString();
+            String toggle2 = binding.toggleBtn2.getText().toString();
+            String result = getData(toggle1 , toggle2);
+            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         });
     }
 
-    private void setUpViews() {
-        toggleBtn1 = findViewById(R.id.toggle_btn1);
-        toggleBtn2 = findViewById(R.id.toggle_btn2);
-        submitBtn = findViewById(R.id.submit_btn);
+    // BusinessLogic
+    private String getData(String toggle1, String toggle2) {
+        String button1 = "Button1 : " + toggle1 + "\n";
+        String button2 = "Button2 : " + toggle2;
+        String result = button1 += button2;
+        return result;
     }
+
+
 }
