@@ -27,6 +27,30 @@ public class MainActivity extends AppCompatActivity {
         handleVerticalScroll();
         handleHorizontalScroll();
         handleListView();
+        handleCustomListView();
+        handleAlertDialog();
+        handleProgressDialog();
+    }
+
+    private void handleProgressDialog() {
+        binding.progressDialogBtn.setOnClickListener(view -> {
+            Intent progressAlertIntent = new Intent(this,ProgressDialogActivity.class);
+            startActivity(progressAlertIntent);
+        });
+    }
+
+    private void handleAlertDialog() {
+        binding.alertDialogBtn.setOnClickListener(view -> {
+            Intent alertDialogIntent = new Intent(this,AlertDialogActivity.class);
+            startActivity(alertDialogIntent);
+        });
+    }
+
+    private void handleCustomListView() {
+        binding.customListViewBtn.setOnClickListener(view -> {
+            Intent customListViewIntent = new Intent(this,CustomListViewActivity.class);
+            startActivity(customListViewIntent);
+        });
     }
 
     private void handleListView() {

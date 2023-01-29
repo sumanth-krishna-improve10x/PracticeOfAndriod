@@ -7,28 +7,24 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import com.improve10x.practiceofandroid.databinding.ActivityRatingBarBinding;
+
 public class RatingBarActivity extends AppCompatActivity {
-    private RatingBar ratingBarBtn;
-    private Button submitBtn;
+    private ActivityRatingBarBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivityRatingBarBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating_bar);
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("Rating Bar");
-        setUpViews();
-        handleButton();
+        handleRatingBar();
     }
 
-    private void handleButton() {
-        submitBtn.setOnClickListener(view -> {
-            String rating = String.valueOf(ratingBarBtn.getRating());
-            Toast.makeText(this, rating, Toast.LENGTH_LONG).show();
+    private void handleRatingBar() {
+        binding.submitBtn.setOnClickListener(view -> {
+            String rating = String.valueOf(binding.ratingBarBtn.getRating());
+            Toast.makeText(this, rating, Toast.LENGTH_SHORT).show();
         });
-    }
-
-    private void setUpViews() {
-        ratingBarBtn = findViewById(R.id.rating_bar_btn);
-        submitBtn = findViewById(R.id.submit_btn);
     }
 }
