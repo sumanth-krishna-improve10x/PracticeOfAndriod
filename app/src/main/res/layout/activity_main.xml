@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,182 +7,150 @@
     android:backgroundTint="#15DCC9"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/custom_toast_btn"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#15DCC9"
-        android:text="Custom Toast Button"
-        app:layout_constraintEnd_toEndOf="@+id/button_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button_btn"
-        tools:layout_editor_absoluteY="56dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/toggle_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Toggle Button"
-        app:layout_constraintEnd_toEndOf="@+id/custom_toast_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/custom_toast_btn"
-        app:layout_constraintTop_toBottomOf="@+id/custom_toast_btn" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/custom_toast_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="Custom Toast Button" />
 
-    <Button
-        android:id="@+id/check_box_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#15DCC9"
-        android:text="check box button"
-        app:layout_constraintEnd_toEndOf="@+id/toggle_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/toggle_btn"
-        app:layout_constraintTop_toBottomOf="@+id/toggle_btn" />
+            <Button
+                android:id="@+id/toggle_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#15DCC9"
+                android:text="Toggle Button" />
 
-    <Button
-        android:id="@+id/radio_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Radio button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/check_box_btn"
-        app:layout_constraintTop_toBottomOf="@+id/check_box_btn" />
+            <Button
+                android:id="@+id/button_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="Button" />
 
-    <Button
-        android:id="@+id/rating_bar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#15DCC9"
-        android:text="Rating Bar"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/radio_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/radio_btn"
-        app:layout_constraintTop_toBottomOf="@+id/radio_btn" />
+            <Button
+                android:id="@+id/check_box_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#15DCC9"
+                android:text="check box button" />
 
-    <Button
-        android:id="@+id/seek_bar_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Seek Bar"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/rating_bar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/rating_bar"
-        app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+            <Button
+                android:id="@+id/radio_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="Radio button" />
 
-    <Button
-        android:id="@+id/date_picker_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#15DCC9"
-        android:text="DatePicker"
-        app:layout_constraintEnd_toEndOf="@+id/seek_bar_btn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/seek_bar_btn"
-        app:layout_constraintTop_toBottomOf="@+id/seek_bar_btn" />
+            <Button
+                android:id="@+id/rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="Rating Bar"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/time_picker_btn"
-        android:layout_width="397dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="TimePicker"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/date_picker_btn"
-        app:layout_constraintStart_toStartOf="@+id/date_picker_btn"
-        app:layout_constraintTop_toBottomOf="@+id/date_picker_btn" />
+            <Button
+                android:id="@+id/seek_bar_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#15DCC9"
+                android:text="Seek Bar"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/vertical_scroll_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#15DCC9"
-        android:text="VerticalScrollView"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/time_picker_btn"
-        app:layout_constraintStart_toStartOf="@+id/time_picker_btn"
-        app:layout_constraintTop_toBottomOf="@+id/time_picker_btn" />
+            <Button
+                android:id="@+id/date_picker_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#15DCC9"
+                android:text="DatePicker" />
 
-    <Button
-        android:id="@+id/horizontal_scroll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Horizontal view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/vertical_scroll_btn"
-        app:layout_constraintTop_toBottomOf="@+id/vertical_scroll_btn" />
+            <Button
+                android:id="@+id/time_picker_btn"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="TimePicker"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/list_view_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="List View"
-        app:layout_constraintEnd_toEndOf="@+id/horizontal_scroll"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/horizontal_scroll"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll" />
+            <Button
+                android:id="@+id/vertical_scroll_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="VerticalScrollView"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/custom_list_view_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="CustomListView"
-        app:layout_constraintEnd_toEndOf="@+id/list_view_btn"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="@+id/list_view_btn"
-        app:layout_constraintTop_toBottomOf="@+id/list_view_btn" />
+            <Button
+                android:id="@+id/horizontal_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="Horizontal view" />
 
-    <Button
-        android:id="@+id/alert_dialog_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="AlertDialog"
-        app:layout_constraintEnd_toEndOf="@+id/custom_list_view_btn"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="@+id/custom_list_view_btn"
-        app:layout_constraintTop_toBottomOf="@+id/custom_list_view_btn" />
+            <Button
+                android:id="@+id/list_view_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="List View" />
 
-    <Button
-        android:id="@+id/progress_dialog_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#15DCC9"
-        android:text="Progress Dialog"
-        app:layout_constraintEnd_toEndOf="@+id/alert_dialog_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alert_dialog_btn" />
+            <Button
+                android:id="@+id/custom_list_view_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="CustomListView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/alert_dialog_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="AlertDialog" />
+
+            <Button
+                android:id="@+id/progress_dialog_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#15DCC9"
+                android:text="Progress Dialog" />
+
+            <Button
+                android:id="@+id/web_view_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="WebView" />
+
+            <Button
+                android:id="@+id/spinner_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="Spinner" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

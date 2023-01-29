@@ -30,6 +30,22 @@ public class MainActivity extends AppCompatActivity {
         handleCustomListView();
         handleAlertDialog();
         handleProgressDialog();
+        handleWebView();
+        handleSpinner();
+    }
+
+    private void handleSpinner() {
+        binding.spinnerBtn.setOnClickListener(view -> {
+            Intent spinnerIntent = new Intent(this,SpinnerActivity.class);
+            startActivity(spinnerIntent);
+        });
+    }
+
+    private void handleWebView() {
+        binding.webViewBtn.setOnClickListener(view -> {
+            Intent webViewIntent = new Intent(this,WebViewActivity.class);
+            startActivity(webViewIntent);
+        });
     }
 
     private void handleProgressDialog() {
