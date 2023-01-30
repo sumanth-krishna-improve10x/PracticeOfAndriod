@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         handleWebView();
         handleSpinner();
         handleCustomAlertDialog();
+        handleSearchView();
+    }
+
+    private void handleSearchView() {
+        binding.searchViewBtn.setOnClickListener(view -> {
+            Intent searchViewIntent = new Intent(this,SearchViewActivity.class);
+            startActivity(searchViewIntent);
+        });
     }
 
     private void handleCustomAlertDialog() {

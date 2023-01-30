@@ -157,6 +157,14 @@
                 android:backgroundTint="#15DCC9"
                 android:text="CustomAlertDialog" />
 
+            <Button
+                android:id="@+id/search_view_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="SearchView"
+                android:textSize="14sp" />
+
         </LinearLayout>
     </ScrollView>
 
