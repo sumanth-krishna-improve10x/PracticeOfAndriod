@@ -150,6 +150,13 @@
                 android:backgroundTint="#15DCC9"
                 android:text="Spinner" />
 
+            <Button
+                android:id="@+id/custom_alert_dialog_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="CustomAlertDialog" />
+
         </LinearLayout>
     </ScrollView>
 
