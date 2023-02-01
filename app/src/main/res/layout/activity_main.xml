@@ -165,6 +165,21 @@
                 android:text="SearchView"
                 android:textSize="14sp" />
 
+            <Button
+                android:id="@+id/text_watcher_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="TextWatcher" />
+
+            <Button
+                android:id="@+id/tool_bar_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#15DCC9"
+                android:text="SearchView on ToolBar"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </ScrollView>
 

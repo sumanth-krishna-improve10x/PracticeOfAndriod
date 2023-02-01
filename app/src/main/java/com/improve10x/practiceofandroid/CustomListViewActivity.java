@@ -3,30 +3,38 @@ package com.improve10x.practiceofandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ListView;
 
 import com.improve10x.practiceofandroid.databinding.ActivityCustomListViewBinding;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CustomListViewActivity extends AppCompatActivity {
+     private ActivityCustomListViewBinding binding;
+    private ArrayList<CustomList> listsLv;
+    private CustomListViewAdapter customListViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_list_view);
+        binding = ActivityCustomListViewBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().setTitle("CustomListView");
+        setData();
+        customListView();
     }
 
-    //ListView customLv = findViewById(R.id.custom_lv);
-   // List<String> items = new ArrayList<>();
-       // items.add("Item 1");
-        //items.add("Item 2");
-        //items.add("Item 3");
+    private void setData() {
+        listsLv = new ArrayList<>();
+        CustomList title = new CustomList();
+        title.imageUrl = "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-96.png";
+        title.title = "Git Hub";
+        title.subTitle = "Java";
+        listsLv.add(title);
+    }
 
-    //CustomAdapter adapter = new CustomAdapter(this, items);
-      // customLv.setAdapter(adapter);
+    private void customListView() {
+        customListViewAdapter = new CustomListViewAdapter(this,R.layout.custom_list_view_item, listsLv);
+        binding.customLv.setAdapter(customListViewAdapter);
+    }
+
 }
-
-//}

@@ -26,7 +26,6 @@ public class SearchViewActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("SearchView");
         setData();
         handleSearchView();
-
     }
 
 

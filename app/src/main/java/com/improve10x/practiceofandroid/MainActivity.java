@@ -34,6 +34,22 @@ public class MainActivity extends AppCompatActivity {
         handleSpinner();
         handleCustomAlertDialog();
         handleSearchView();
+        handleTextWatcher();
+        handleToolBar();
+    }
+
+    private void handleToolBar() {
+        binding.toolBarBtn.setOnClickListener(view -> {
+            Intent toolBarIntent = new Intent(this,SearchViewOnToolBarActivity.class);
+            startActivity(toolBarIntent);
+        });
+    }
+
+    private void handleTextWatcher() {
+        binding.textWatcherBtn.setOnClickListener(view -> {
+            Intent textWatcherIntent = new Intent(this,TextWatcherActivity.class);
+            startActivity(textWatcherIntent);
+        });
     }
 
     private void handleSearchView() {
